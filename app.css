@@ -140,6 +140,7 @@ html {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    box-sizing: border-box;
 }
 
 body {
@@ -148,19 +149,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 870px;
-    min-height: 800px;
     background-color: #BBDCE5;
 }
 
 
 main {
-    width: 70%;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 570px;
     height: 70%;
     background-color: white;
     display: flex;
     justify-content: space-evenly;
     border-radius: 2rem;
+    flex-wrap: wrap;
 
 }
 
@@ -180,6 +182,10 @@ main {
     margin: 0 auto;
     font: 10px;
     margin-top: 0.5em;
+}
+
+.horizontal-separator-on-off {
+    display: none;
 }
 
 .card {
@@ -224,11 +230,64 @@ main {
     margin: 0 auto;
     width: 60%;
     height: 10%;
-    border-radius: 2rem;
+    border-radius: 1rem;
     background-color: white;
     font-size: 1.8rem;
+    cursor: pointer;
 }
 
-.card.small-team button {
-    background-color: #BBDCE5;
+.enterprise.card button {
+    margin-bottom: 5rem;
+}
+
+.card button:hover {
+    background-color: #bbdce580;
+}
+
+@media (max-width: 970px) {
+
+    body {
+        height: 100%;
+        min-width: 400px;
+    }
+
+    main {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .vertical-separator {
+        display: none;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card img {
+        width: 36%;
+        height: 18%;
+        min-width: 250px;
+        min-height: 125px;
+    }
+
+    .card button {
+        width: 30%;
+        max-width: 250px;
+    }
+
+    .horizontal-separator-on-off {
+        height: 1px;
+        width: 70%;
+        display: block;
+        background-color: #BBDCE5;
+        margin: 0 auto;
+        margin-top: 10rem;
+    }
+
+    .horizontal-separator,
+    .horizontal-separator-on-off {
+        width: 60%;
+    }
+
 }
